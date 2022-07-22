@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/trashcan.obj-7dd8865ab3d50765ff16a57292a45526.mesh"
+
+[deps]
+
+files=[ "res://.import/trashcan.obj-7dd8865ab3d50765ff16a57292a45526.mesh" ]
+
+source_file="res://Models/Furniturepack/trashcan.obj"
+dest_files=[ "res://.import/trashcan.obj-7dd8865ab3d50765ff16a57292a45526.mesh", "res://.import/trashcan.obj-7dd8865ab3d50765ff16a57292a45526.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

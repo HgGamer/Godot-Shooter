@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/rugRound.obj-aed07d6db9b4c08b17d47f3c27c6f47a.mesh"
+
+[deps]
+
+files=[ "res://.import/rugRound.obj-aed07d6db9b4c08b17d47f3c27c6f47a.mesh" ]
+
+source_file="res://Models/Furniturepack/rugRound.obj"
+dest_files=[ "res://.import/rugRound.obj-aed07d6db9b4c08b17d47f3c27c6f47a.mesh", "res://.import/rugRound.obj-aed07d6db9b4c08b17d47f3c27c6f47a.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

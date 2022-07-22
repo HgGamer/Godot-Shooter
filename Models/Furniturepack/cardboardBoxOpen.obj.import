@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/cardboardBoxOpen.obj-b98f7e9d20900fe47408766c1d79d158.mesh"
+
+[deps]
+
+files=[ "res://.import/cardboardBoxOpen.obj-b98f7e9d20900fe47408766c1d79d158.mesh" ]
+
+source_file="res://Models/Furniturepack/cardboardBoxOpen.obj"
+dest_files=[ "res://.import/cardboardBoxOpen.obj-b98f7e9d20900fe47408766c1d79d158.mesh", "res://.import/cardboardBoxOpen.obj-b98f7e9d20900fe47408766c1d79d158.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

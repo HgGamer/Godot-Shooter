@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Player.cs" type="Script" id=1]
+[ext_resource path="res://Models/blasterK.obj" type="ArrayMesh" id=2]
+[ext_resource path="res://default_env.tres" type="Environment" id=3]
+
+[sub_resource type="CapsuleShape" id=1]
+
+[node name="Player" type="KinematicBody"]
+script = ExtResource( 1 )
+mouseSensitivity = 0.3
+gravity = -9.8
+moveSpeed = 6.0
+moveWalkSpeed = 5.0
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+shape = SubResource( 1 )
+
+[node name="Head" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.06946, 0 )
+
+[node name="Camera" type="Camera" parent="Head"]
+environment = ExtResource( 3 )
+current = true
+fov = 65.0
+
+[node name="Arms" type="Spatial" parent="Head/Camera"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.264689, -0.949656, -0.128308 )
+
+[node name="blasterK" type="MeshInstance" parent="Head/Camera/Arms"]
+transform = Transform( 1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0.467, 0.567, -0.794 )
+mesh = ExtResource( 2 )
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+
+[node name="FloorChecker" type="RayCast" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.45, 0 )
+enabled = true
+cast_to = Vector3( 0, -0.75, 0 )
