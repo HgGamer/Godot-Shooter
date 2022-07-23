@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Materials/floor.tres" type="Material" id=1]
 [ext_resource path="res://Materials/wall.tres" type="Material" id=2]
-[ext_resource path="res://Room.cs" type="Script" id=3]
+[ext_resource path="res://Scripts/Room.cs" type="Script" id=3]
 [ext_resource path="res://Materials/Colors/Red.tres" type="Material" id=4]
 [ext_resource path="res://Materials/Colors/Blue.tres" type="Material" id=5]
 [ext_resource path="res://Materials/Colors/Green.tres" type="Material" id=6]

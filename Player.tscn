@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Player.cs" type="Script" id=1]
+[ext_resource path="res://Scripts/Player.cs" type="Script" id=1]
 [ext_resource path="res://Models/blasterK.obj" type="ArrayMesh" id=2]
-[ext_resource path="res://default_env.tres" type="Environment" id=3]
+[ext_resource path="res://Textures/default_env.tres" type="Environment" id=3]
 
 [sub_resource type="CapsuleShape" id=1]
 
