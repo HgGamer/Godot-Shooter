@@ -12,7 +12,7 @@ public class Room : Spatial
 		doorRoot = (Node)FindNode("Doors");
 		for(int i = 0; i < doorRoot.GetChildCount(); i++)
 		{
-			GD.Print(doorRoot.GetChild(i).Name);
+			//GD.Print(doorRoot.GetChild(i).Name);
 		}
 		
 	}
