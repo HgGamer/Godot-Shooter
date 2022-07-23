@@ -20,11 +20,9 @@ public class LevelManager : Node
 		AddChild(newGround);
 
 		lastroom = (Room)newGround;
-		AddRoom(0,0);
-		AddRoom(1,1);
-		AddRoom(2,2);
-		AddRoom(3,3);
-		
+		AddRoom(0, 0);
+		AddRoom(0, 0);
+		AddRoom(1, 1);
 	}
 
 
@@ -36,16 +34,13 @@ public class LevelManager : Node
 		AddChild(instance);
 		Spatial newDoor = ((Room)instance).GetDoor(door2);
 
-		Vector2 direction = (new Vector2(lastdoor.Transform.origin.x, lastdoor.Transform.origin.z) - new Vector2(lastroom.Transform.origin.x, lastroom.Transform.origin.z)).Normalized();
-		Vector2 direction2 = (new Vector2(newDoor.Transform.origin.x, newDoor.Transform.origin.z) - new Vector2(instance.Transform.origin.x, instance.Transform.origin.z)).Normalized();
-		instance.Rotate(Vector3.Up, (Mathf.Pi+ direction2.Angle() - direction.Angle()));
-		GD.Print(direction.Angle());
-		//instance.Translation = new Vector3(lastdoor.GlobalTransform.origin.x , 0, lastdoor.Transform.origin.z );
-		
-		instance.Translation = new Vector3(lastdoor.GlobalTransform.origin.x +(instance.Transform.origin.x+ newDoor.Transform.origin.x), 0, lastdoor.Transform.origin.z + (instance.Transform.origin.z+ newDoor.Transform.origin.z));
+		//Vector2 direction = (new Vector2(lastdoor.Transform.origin.x, lastdoor.Transform.origin.z) - new Vector2(lastroom.Transform.origin.x, lastroom.Transform.origin.z)).Normalized();
+		//Vector2 direction2 = (new Vector2(newDoor.Transform.origin.x, newDoor.Transform.origin.z) - new Vector2(instance.Transform.origin.x, instance.Transform.origin.z)).Normalized();
+		//instance.Rotate(Vector3.Up, (Mathf.Pi+ direction2.Angle() - direction.Angle()));
+		instance.Translation = new Vector3(lastdoor.GlobalTransform.origin.x +(instance.Transform.origin.x+ newDoor.Transform.origin.x), 0, lastdoor.GlobalTransform.origin.z + (instance.Transform.origin.z+ newDoor.Transform.origin.z));
 		
 		
-		//lastroom = (Room)instance;
+		lastroom = (Room)instance;
 	}
 
 
