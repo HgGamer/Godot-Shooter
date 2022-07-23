@@ -17,11 +17,9 @@ public class Room : Spatial
 		
 	}
 
-	public Basis GetDoor()
+	public Spatial GetDoor(int i)
 	{
-
-		Spatial door = (Spatial)doorRoot.GetChild(0);
-		return door.Transform.basis;
+		return (Spatial)doorRoot.GetChild(i);
 	}
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.
