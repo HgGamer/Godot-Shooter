@@ -15,10 +15,22 @@ public class FlyingEnemy : KinematicBody
 	{
 		GetTarget();
 		SetMeta("type", "enemy");
+		Player player = (Player)GetNode("/root/Main/Player");
+		player.Connect("DamageDone", this, "onDamage");
+	}
+
+	void onDamage(Godot.Object target, float val)
+	{
+		if(target == this)
+        {
+			GD.Print("DAMAGED THIS");
+		}
+		GD.Print("DAMAGED");
 	}
 
 	void GetTarget()
 	{
+
 		target = (Spatial)GetNode("../Player");
 	}
 

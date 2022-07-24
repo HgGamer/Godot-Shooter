@@ -52,7 +52,8 @@ public class Player : KinematicBody
 
 	[Signal]
 	delegate void HealthChanged(float val);
-
+	[Signal]
+	delegate void DamageDone(Godot.Object target ,float val);
 	public override void _Ready()
 	{
 		GetNodes();
@@ -141,6 +142,7 @@ public class Player : KinematicBody
 			if (type != null)
 			{
 				GD.Print(type);
+				EmitSignal("DamageDone", (Godot.Object)other,10.0f);
 			}
 			
 		}
