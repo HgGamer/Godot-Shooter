@@ -46,7 +46,9 @@ public class Player : KinematicBody
 	Camera camera;
 	Spatial head;
 	RayCast floorChecker;
+	RayCast shootChecker;
 	Vector3 direction;
+	Particles muzzleflash;
 
 	[Signal]
 	delegate void HealthChanged(float val);
@@ -103,7 +105,7 @@ public class Player : KinematicBody
 
 		direction = direction.Normalized();
 
-		isWalking = Input.IsActionPressed("move_walk");
+		isWalking = false;// Input.IsActionPressed("move_walk");
 
 		if (Input.IsActionJustPressed("jump") && alowJumpInput)
 		{
@@ -118,8 +120,29 @@ public class Player : KinematicBody
 		{
 			canJump = false;
 		}
+		shootChecker.Enabled = true;
+		if (Input.IsActionJustPressed("shoot"))
+		{
+			Shoot();
+
+		}
+
+		//if (Input.IsActionJustPressed("fly_mode")) flyMode = !flyMode;   
+	}
+
+	void Shoot()
+	{
+		muzzleflash.Emitting = true;
+		if (shootChecker.IsColliding())
+		{
+			Spatial other = (Spatial)shootChecker.GetCollider();
+			GD.Print(other.Name);
+			
+		}
 		
-		if (Input.IsActionJustPressed("fly_mode")) flyMode = !flyMode;   
+
+
+
 	}
 
 	void MoveCharacter(float delta)
@@ -183,6 +206,8 @@ public class Player : KinematicBody
 		head = (Spatial) FindNode("Head");
 		camera = (Camera) FindNode("Camera");
 		floorChecker = (RayCast) FindNode("FloorChecker");
+		shootChecker = (RayCast)FindNode("ShootChecker");
+		muzzleflash = (Particles)FindNode("MuzzleFlash");
 	}
 
 	void RotateView()

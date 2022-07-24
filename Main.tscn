@@ -51,5 +51,5 @@ texture = ExtResource( 4 )
 [node name="LevelManager" type="Node" parent="."]
 script = ExtResource( 8 )
 
-[node name="KinematicBody" parent="." instance=ExtResource( 2 )]
+[node name="Enemy" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2.87578, -5.73697 )

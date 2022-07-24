@@ -1,10 +1,29 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/Player.cs" type="Script" id=1]
 [ext_resource path="res://Models/blasterK.obj" type="ArrayMesh" id=2]
 [ext_resource path="res://Textures/default_env.tres" type="Environment" id=3]
+[ext_resource path="res://muzzle_03.png" type="Texture" id=4]
 
 [sub_resource type="CapsuleShape" id=1]
+
+[sub_resource type="ParticlesMaterial" id=2]
+render_priority = 1
+lifetime_randomness = 0.01
+spread = 0.0
+gravity = Vector3( 0, 0, 0 )
+scale = 0.1
+scale_random = 0.15
+color = Color( 0.701961, 0.788235, 0.137255, 1 )
+
+[sub_resource type="SpatialMaterial" id=3]
+flags_transparent = true
+flags_unshaded = true
+albedo_color = Color( 0.52549, 0.698039, 1, 1 )
+albedo_texture = ExtResource( 4 )
+
+[sub_resource type="PlaneMesh" id=4]
+material = SubResource( 3 )
 
 [node name="Player" type="KinematicBody"]
 script = ExtResource( 1 )
@@ -25,6 +44,13 @@ environment = ExtResource( 3 )
 current = true
 fov = 65.0
 
+[node name="ShootChecker" type="RayCast" parent="Head/Camera"]
+transform = Transform( 0.999999, -0.00105487, -0.000109196, -0.000110322, -0.00106219, -0.999999, 0.00105475, 0.999999, -0.0010623, 0, 0, 0 )
+enabled = true
+cast_to = Vector3( 0, -50, 0 )
+debug_shape_custom_color = Color( 0.890196, 0, 0, 1 )
+debug_shape_thickness = 3
+
 [node name="Arms" type="Spatial" parent="Head/Camera"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.264689, -0.949656, -0.128308 )
 
@@ -36,6 +62,17 @@ material/1 = null
 material/2 = null
 material/3 = null
 material/4 = null
+
+[node name="MuzzleFlash" type="Particles" parent="Head/Camera/Arms/blasterK"]
+transform = Transform( 4.37114e-08, -1, -8.74227e-08, 1.64348, 7.18388e-08, -1.43678e-07, 1.43678e-07, -1.43678e-07, 1.64348, -0.00248927, 0.0720232, -0.464365 )
+emitting = false
+amount = 6
+lifetime = 0.51
+one_shot = true
+speed_scale = 5.0
+visibility_aabb = AABB( -0.0380895, -0.001, -0.001, 0.076179, 0.002, 0.002 )
+process_material = SubResource( 2 )
+draw_pass_1 = SubResource( 4 )
 
 [node name="FloorChecker" type="RayCast" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.45, 0 )
