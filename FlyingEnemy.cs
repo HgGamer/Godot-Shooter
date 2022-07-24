@@ -14,6 +14,7 @@ public class FlyingEnemy : KinematicBody
 	public override void _Ready()
 	{
 		GetTarget();
+		SetMeta("type", "enemy");
 	}
 
 	void GetTarget()

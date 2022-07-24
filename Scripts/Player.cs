@@ -136,7 +136,12 @@ public class Player : KinematicBody
 		if (shootChecker.IsColliding())
 		{
 			Spatial other = (Spatial)shootChecker.GetCollider();
-			GD.Print(other.Name);
+			
+			var type = other.GetMeta("type");
+			if (type != null)
+			{
+				GD.Print(type);
+			}
 			
 		}
 		
