@@ -142,7 +142,7 @@ public class Player : KinematicBody
 			if (type != null)
 			{
 				GD.Print(type);
-				EmitSignal("DamageDone", (Godot.Object)other,10.0f);
+				EmitSignal("DamageDone", (Godot.Object)other,50.0f);
 			}
 			
 		}
