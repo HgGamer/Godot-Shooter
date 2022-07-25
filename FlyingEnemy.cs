@@ -28,12 +28,10 @@ public class FlyingEnemy : KinematicBody
 		}
 		
 		health -= val;
-		
 	}
 
 	void GetTarget()
 	{
-
 		target = (Spatial)GetNode("../Player");
 	}
 

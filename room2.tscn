@@ -1,0 +1,146 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Materials/floor.tres" type="Material" id=1]
+[ext_resource path="res://Materials/wall.tres" type="Material" id=2]
+[ext_resource path="res://Scripts/Room.cs" type="Script" id=3]
+[ext_resource path="res://Materials/Colors/Red.tres" type="Material" id=4]
+[ext_resource path="res://Materials/Colors/Blue.tres" type="Material" id=5]
+[ext_resource path="res://Materials/Colors/Green.tres" type="Material" id=6]
+[ext_resource path="res://Materials/Colors/Yellow.tres" type="Material" id=7]
+
+[sub_resource type="CubeMesh" id=3]
+
+[sub_resource type="Skin" id=4]
+
+[sub_resource type="BoxShape" id=5]
+extents = Vector3( 1.00021, 1, 1 )
+
+[node name="Level" type="Spatial"]
+script = ExtResource( 3 )
+
+[node name="Doors" type="MeshInstance" parent="."]
+
+[node name="Door" type="MeshInstance" parent="Doors"]
+transform = Transform( -1.31134e-08, 0, -2.2, 0, 3, 0, 0.3, 0, -9.61651e-08, 33.2931, 2.8, 17.7772 )
+material_override = ExtResource( 5 )
+mesh = SubResource( 3 )
+skin = SubResource( 4 )
+skeleton = NodePath("")
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Doors/Door"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Doors/Door/StaticBody"]
+shape = SubResource( 5 )
+
+[node name="Door2" type="MeshInstance" parent="Doors"]
+transform = Transform( 0.3, 0, 0, 0, 3, 0, 0, 0, 2.2, 37.056, 2.8, -9.21211 )
+material_override = ExtResource( 6 )
+mesh = SubResource( 3 )
+skin = SubResource( 4 )
+skeleton = NodePath("")
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Doors/Door2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Doors/Door2/StaticBody"]
+shape = SubResource( 5 )
+
+[node name="Door3" type="MeshInstance" parent="Doors"]
+transform = Transform( -1.31134e-08, 0, 2.2, 0, 3, 0, -0.3, 0, -9.6165e-08, -17.031, 2.8, -17.7772 )
+material_override = ExtResource( 4 )
+mesh = SubResource( 3 )
+skin = SubResource( 4 )
+skeleton = NodePath("")
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Doors/Door3"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Doors/Door3/StaticBody"]
+shape = SubResource( 5 )
+
+[node name="Door4" type="MeshInstance" parent="Doors"]
+transform = Transform( -0.3, 0, -1.9233e-07, 0, 3, 0, 2.62268e-08, 0, -2.2, -37.689, 2.8, 0 )
+material_override = ExtResource( 7 )
+mesh = SubResource( 3 )
+skin = SubResource( 4 )
+skeleton = NodePath("")
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Doors/Door4"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Doors/Door4/StaticBody"]
+shape = SubResource( 5 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 0.374, 0, 0, 0, 3, 0, 0, 0, 18, -17.8, 2.8, 0 )
+visible = false
+material_override = ExtResource( 2 )
+mesh = SubResource( 3 )
+skin = SubResource( 4 )
+skeleton = NodePath("")
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance/StaticBody"]
+shape = SubResource( 5 )
+disabled = true
+
+[node name="floor" type="MeshInstance" parent="."]
+transform = Transform( -37.8471, 0, -3.3087e-06, 0, 0.200247, 0, 1.57555e-06, 0, -18.0222, 0, 0, 0 )
+material_override = ExtResource( 1 )
+mesh = SubResource( 3 )
+skin = SubResource( 4 )
+skeleton = NodePath("")
+material/0 = ExtResource( 1 )
+
+[node name="StaticBody" type="StaticBody" parent="floor"]
+
+[node name="CollisionShape" type="CollisionShape" parent="floor/StaticBody"]
+shape = SubResource( 5 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="."]
+transform = Transform( 0.374, 0, 0, 0, 3, 0, 0, 0, 18, 17.8, 2.8, 0 )
+visible = false
+material_override = ExtResource( 2 )
+mesh = SubResource( 3 )
+skin = SubResource( 4 )
+skeleton = NodePath("")
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance2/StaticBody"]
+shape = SubResource( 5 )
+disabled = true
+
+[node name="MeshInstance4" type="MeshInstance" parent="."]
+transform = Transform( -1.63481e-08, 0, -18, 0, 3, 0, 0.374, 0, -7.86805e-07, 7.78063e-07, 2.8, -17.8 )
+visible = false
+material_override = ExtResource( 2 )
+mesh = SubResource( 3 )
+skin = SubResource( 4 )
+skeleton = NodePath("")
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance4"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance4/StaticBody"]
+shape = SubResource( 5 )
+disabled = true
+
+[node name="MeshInstance5" type="MeshInstance" parent="."]
+transform = Transform( -1.63481e-08, 0, -18, 0, 3, 0, 0.374, 0, -7.86805e-07, -7.78063e-07, 2.8, 17.8 )
+visible = false
+material_override = ExtResource( 2 )
+mesh = SubResource( 3 )
+skin = SubResource( 4 )
+skeleton = NodePath("")
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="MeshInstance5"]
+
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance5/StaticBody"]
+shape = SubResource( 5 )
+disabled = true
