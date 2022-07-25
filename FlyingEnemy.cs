@@ -23,13 +23,12 @@ public class FlyingEnemy : KinematicBody
 
 	void onDamage(Godot.Object target, float val)
 	{
-		if(target == this)
-        {
-			GD.Print("DAMAGED THIS");
-			health -= val;
-			
+		if(target != this){
+			return;
 		}
-		GD.Print("DAMAGED");
+		
+		health -= val;
+		
 	}
 
 	void GetTarget()
